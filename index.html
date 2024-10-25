@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Components</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+<!-- 
+functional components are how components get written nowadays
+other React codebases though have a lot of class-based components
+prior to Feb 2019, functional components did not have a way to manage state
+  hooks were introduced, then components became less verbose and neater
+
+
+learn structure of a class component and how they are written
+  How does JSX get displayed?
+how to use props and state in class components
+  How do props get used in a class-based component?
+  How do I deal with state in a class-based component?
+uses of this in class components
+  How do I restore the context of this in a method?
+
+JS class review
+classes - create objects on top of prototype-based inheritance
+        readable, is syntactic sugar, and can be overkill for simple use cases
+        ideal for complex applications where multiple similar objects and 
+        inheritance are required
+prototypal inheritance - create objects that inherit from a prototype
+                          less familiar syntax, can become complex without structure
+                          more approachable for devs familiar with object-oriented paradigms 
+                            from other languages 
+factory functions - function that returns new objects without using new
+                    allows encapsulation and private data using closures,
+                    lacks built-in inheritance, shared methods need manual setup
+                    ideal for simpler scenarios or when I need more control over
+                      object creation (e.g. private properties)
+constructor function - create objects using new, reusable for multiple objects
+                       supports inheritance, but harder to manage inheritance manually
+                       compared to classes
+                       less common in modern codebases, classes are more comon
+object literals - create a single object using literal notation, not reusable for multiple objects
+                  no inheritance
+
+ -->
