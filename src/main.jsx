@@ -1,12 +1,19 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { App, FunctionalInput } from "./App.jsx";
+import { App, ErrorBoundary, FunctionalInput, ClassInput } from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
-    <FunctionalInput />
+    {/* if FunctionalInput of its child component throws an error, 
+    ErrorBoundary will catch that error, display a fallback UI with the
+    error message I've provided, and send a production error report to
+    my error reporting service */}
+    <ErrorBoundary fallback={<p>Something went wrong</p>}>
+      <FunctionalInput />
+    </ErrorBoundary>
+    <ClassInput />
   </StrictMode>
 );
 
@@ -38,4 +45,14 @@ example of RESTful systems:
 - RESTful API - when I make a request (e.g. GET /users), the server does
   not remember past request or sessions unless specifically included, 
   as with authentication tokens
+
+think about where it makes sense to display an error message:
+for a messaging app -
+  error boundary around the list of conversations
+  error boundary around every individual message
+  but no error boundary around every avatar
+
+modal - pop-up element
+tooltip - small, floating label or message that appears when a user hovers
+          or focuses on an element
 */

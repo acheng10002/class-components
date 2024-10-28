@@ -20,12 +20,24 @@ prior to Feb 2019, functional components did not have a way to manage state
 
 
 learn structure of a class component and how they are written
-  How does JSX get displayed?
+  How does JSX get displayed? 
+    with render()
 how to use props and state in class components
   How do props get used in a class-based component?
+    props passed into the component, get passed into the class's constructor
+    constructor and super method lets me use the props in the context of this
+    this, refers to the component 
+    {/* props provided by this instead of as prop passed into a 
+        functional component */}
+        <h3>{this.props.name}</h3>
   How do I deal with state in a class-based component?
+    state gets initialized as a part of the constructor 
 uses of this in class components
   How do I restore the context of this in a method?
+    /* whenever a method is declared, the this of the method must be
+    binded to the this of the class instance
+    this way, all methods can access the state and props of the class */
+    this.handleInputChange = this.handleInputChange.bind(this);
 
 JS class review
 classes - create objects on top of prototype-based inheritance
@@ -47,5 +59,4 @@ constructor function - create objects using new, reusable for multiple objects
                        less common in modern codebases, classes are more comon
 object literals - create a single object using literal notation, not reusable for multiple objects
                   no inheritance
-
- -->
+-->
